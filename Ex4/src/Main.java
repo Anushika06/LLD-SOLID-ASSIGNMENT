@@ -12,7 +12,9 @@ public class Main {
         );
 
         HostelFeeCalculator calc = new HostelFeeCalculator();
-        FeeResult result = calc.calculate(req);
+        
+        List<FeeComponent> extras = List.of(); 
+        FeeResult result = calc.calculate(req,extras);
 
         ReceiptPrinter.print(req, result);
 

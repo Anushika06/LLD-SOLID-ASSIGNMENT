@@ -1,4 +1,4 @@
-public class LaundryAddOn implements FeeComponent {
+public class LateFee implements FeeComponent {
 
     @Override
     public Money monthly() {

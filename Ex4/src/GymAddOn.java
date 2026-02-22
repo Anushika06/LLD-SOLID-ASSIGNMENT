@@ -1,4 +1,4 @@
-public class GymAddOn implements AddOnPricing {
+public class GymAddOn implements FeeComponent {
 
     @Override
     public Money monthly() {

@@ -1,4 +1,4 @@
-public class MessAddOn implements AddOnPricing {
+public class MessAddOn implements FeeComponent {
 
     @Override
     public Money monthly() {
