@@ -9,9 +9,11 @@ public class Main {
         Exporter pdf = new PdfExporter();
         Exporter csv = new CsvExporter();
         Exporter json = new JsonExporter();
+        Exporter xml = new XmlExporter();
 
         System.out.println("PDF: " + pdf.export(req));
         System.out.println("CSV: " + csv.export(req));
         System.out.println("JSON: " + json.export(req));
+        System.out.println("XML: " + xml.export(req));
     }
 }
