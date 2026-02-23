@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Main {
+public class Demo04 {
 
     public static void main(String[] args) {
 
