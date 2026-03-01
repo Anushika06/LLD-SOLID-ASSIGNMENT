@@ -1,6 +1,6 @@
-# 🏫 Smart Classroom System – SOLID (ISP) Refactoring
+#  Smart Classroom System – SOLID (ISP) Refactoring
 
-## 📌 Overview
+##  Overview
 
 This project demonstrates refactoring a Smart Classroom system to properly follow the **Interface Segregation Principle (ISP)** from the SOLID design principles.
 
@@ -9,7 +9,7 @@ This refactoring introduces **capability-based interfaces**, resulting in a clea
 
 ---
 
-# 🎯 Objective
+# Objective
 
 Refactor the system to:
 
@@ -22,7 +22,7 @@ Refactor the system to:
 
 ---
 
-# 🔴 Problem in Original Design
+#  Problem in Original Design
 
 Previously, all devices implemented a single interface containing multiple unrelated methods:
 
@@ -37,7 +37,7 @@ public interface SmartClassroomDevice {
 }
 ```
 
-### ❌ Issues
+###  Issues
 
 * AC had brightness and attendance methods
 * Scanner had temperature methods
@@ -52,13 +52,13 @@ This violated the **Interface Segregation Principle**:
 
 ---
 
-# 🟢 Refactored Design
+#  Refactored Design
 
 The fat interface was replaced with **small, focused capability interfaces**.
 
 ---
 
-## 🔌 Core Power Interface
+## Core Power Interface
 
 ```java
 public interface SmartClassroomDevice {
@@ -69,7 +69,7 @@ public interface SmartClassroomDevice {
 
 ---
 
-## 🧩 Capability Interfaces
+##  Capability Interfaces
 
 ### Brightness Control
 
@@ -107,13 +107,13 @@ Each interface now represents **exactly one responsibility**.
 
 ---
 
-# 🏗 Device Implementations
+#  Device Implementations
 
 Each device implements only relevant capabilities.
 
 ---
 
-## 🖥 Projector
+## Projector
 
 Implements:
 
@@ -122,7 +122,7 @@ Implements:
 
 ---
 
-## 💡 LightsPanel
+## LightsPanel
 
 Implements:
 
@@ -131,7 +131,7 @@ Implements:
 
 ---
 
-## ❄ AirConditioner
+## AirConditioner
 
 Implements:
 
@@ -140,7 +140,7 @@ Implements:
 
 ---
 
-## 🧾 AttendanceScanner
+## AttendanceScanner
 
 Implements:
 
@@ -149,7 +149,7 @@ Implements:
 
 ---
 
-## 🖊 SmartBoard (Stretch Goal)
+## SmartBoard (Stretch Goal)
 
 Implements:
 
@@ -161,7 +161,7 @@ The SmartBoard was added **without modifying existing controller logic**, demons
 
 ---
 
-# 🗃 DeviceRegistry Improvements
+#  DeviceRegistry Improvements
 
 The registry was redesigned to support capability-based lookup.
 
@@ -184,7 +184,7 @@ This allows retrieving devices based on what they **can do**, not what they **ar
 
 ---
 
-# 🎮 Controller Design
+#  Controller Design
 
 The controller now depends on abstractions:
 
@@ -209,7 +209,7 @@ No dummy logic.
 
 ---
 
-# 📤 Sample Output
+# Sample Output
 
 ```
 === Smart Classroom ===
@@ -224,7 +224,7 @@ AC OFF
 ```
 ---
 
-# 🚀 Architectural Improvements
+#  Architectural Improvements
 
 * Eliminated fat interface
 * Removed dummy implementations
@@ -236,7 +236,7 @@ AC OFF
 
 ---
 
-# 🛠 How to Run
+#  How to Run
 
 ```bash
 cd src
