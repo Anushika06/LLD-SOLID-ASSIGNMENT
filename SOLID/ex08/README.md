@@ -60,7 +60,7 @@ The fat interface was removed and replaced with smaller, capability-based interf
 ## FinanceOperations
 
 ```java
-public interface FinanceOperations {
+public interface FinanceOps {
     void addIncome(double amt, String note);
     void addExpense(double amt, String note);
 }
@@ -73,7 +73,7 @@ Used by: `TreasurerTool`
 ## MinutesOperations
 
 ```java
-public interface MinutesOperations {
+public interface MinutesOps {
     void addMinutes(String text);
 }
 ```
@@ -85,7 +85,7 @@ Used by: `SecretaryTool`
 ## EventOperations
 
 ```java
-public interface EventOperations {
+public interface EventOps {
     void createEvent(String name, double budget);
     int getEventsCount();
 }
@@ -103,7 +103,7 @@ Each role now implements only the interface relevant to it.
 
 ## TreasurerTool
 
-* Implements `FinanceOperations`
+* Implements `FinanceOps`
 * Handles ledger transactions only
 * No irrelevant methods
 
@@ -111,7 +111,7 @@ Each role now implements only the interface relevant to it.
 
 ## SecretaryTool
 
-* Implements `MinutesOperations`
+* Implements `MinutesOps`
 * Handles meeting minutes only
 * No finance or event methods
 
@@ -119,7 +119,7 @@ Each role now implements only the interface relevant to it.
 
 ## EventLeadTool
 
-* Implements `EventOperations`
+* Implements `EventOps`
 * Manages event creation and tracking
 * No finance or minutes methods
 
@@ -140,9 +140,9 @@ After:
 * Cleaner separation of concerns
 
 ```java
-FinanceOperations treasurer = new TreasurerTool(ledger);
-MinutesOperations secretary = new SecretaryTool(minutes);
-EventOperations lead = new EventLeadTool(events);
+FinanceOps treasurer = new TreasurerTool(ledger);
+MinutesOps secretary = new SecretaryTool(minutes);
+EventOps lead = new EventLeadTool(events);
 ```
 
 ---
@@ -180,7 +180,7 @@ A new role like **PublicityLead** can now be added without implementing finance 
 Example:
 
 ```java
-public class PublicityLeadTool implements EventOperations {
+public class PublicityLeadTool implements EventOps {
     ...
 }
 ```
